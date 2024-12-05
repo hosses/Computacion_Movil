@@ -1,0 +1,23 @@
+plugins {
+    // Agrega tus plugins aquí, asegurándote de que estén correctamente declarados.
+    // Por ejemplo:
+    id 'com.google.gms.google-services' version '4.4.2' apply false
+}
+
+// Luego, declara otros bloques como `allprojects`, `subprojects`, etc.
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

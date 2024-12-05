@@ -1,0 +1,54 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // Flutter Gradle Plugin
+    id "dev.flutter.flutter-gradle-plugin"
+    // Google Services Plugin
+    id "com.google.gms.google-services"
+}
+
+android {
+    namespace = "com.example.untitled2"
+    compileSdk = 34 // Cambia según la versión deseada.
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.untitled2"
+        minSdk = 23 // Asegúrate de que sea compatible con tus dependencias.
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            // Configuración de firma para el build de lanzamiento.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    // Firebase BoM para manejar versiones automáticamente
+    implementation platform("com.google.firebase:firebase-bom:33.6.0")
+
+    // Agrega las dependencias de Firebase que necesitas
+    implementation "com.google.firebase:firebase-analytics"
+
+    // Aquí puedes incluir otras librerías necesarias
+    // https://firebase.google.com/docs/android/setup#available-libraries
+}
+
+apply plugin: "com.google.gms.google-services"
