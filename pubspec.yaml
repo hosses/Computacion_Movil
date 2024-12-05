@@ -1,0 +1,51 @@
+name: oirs_utem
+description: Aplicación móvil para la Oficina de Información, Reclamos y Sugerencias de la UTEM.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'  # Actualizado para Dart 3.x
+
+dependencies:
+  flutter:
+    sdk: flutter 
+  font_awesome_flutter: ^10.5.0
+
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  firebase_storage: ^11.5.6
+
+  # Autenticación con Google
+  google_sign_in: ^6.2.1
+
+  # Networking
+  dio: ^5.4.0
+  http: ^1.1.2
+
+  # Manejo de archivos
+  file_picker: ^6.1.1
+  image_picker: ^1.0.5
+  path: ^1.8.3
+
+  # UI
+  cupertino_icons: ^1.0.6
+  flutter_spinkit: ^5.2.0
+  cached_network_image: ^3.3.0
+
+  # Utilidades
+  intl: ^0.19.0
+  url_launcher: ^6.2.2
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/utem_logo.png
+    - lib/assets/google_logo.png
